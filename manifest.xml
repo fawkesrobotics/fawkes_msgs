@@ -7,6 +7,8 @@
   <review status="unreviewed" notes=""/>
   <url>https://trac.fawkesrobotics.org/wiki/Plugins/ros</url>
 
+  <depend package="actionlib" />
+  <depend package="actionlib_msgs" />
   <depend package="geometry_msgs" />
 
 </package>

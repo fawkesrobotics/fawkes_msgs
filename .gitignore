@@ -1,3 +1,4 @@
 src/fawkes_msgs
 msg_gen
 build
+msg/ExecSkill*
