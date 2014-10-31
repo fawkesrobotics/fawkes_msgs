@@ -1,4 +1,19 @@
-src/fawkes_msgs
-msg_gen
-build
+# Generic globs
+*~
+
+# ROS specifics
+/build/
+/msg_gen/
+/msg/*/
+/ROS_NOBUILD
+/src/*/srv/
+/src/*/msg/
+/srv_gen/
+/srv/*/
+
+# Messages generated from actions
 msg/ExecSkill*
+
+# We have only messages here...
+src/fawkes_msgs
+
