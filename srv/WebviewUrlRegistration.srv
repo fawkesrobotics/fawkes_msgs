@@ -1,0 +1,5 @@
+string url_prefix
+string service_name
+---
+bool success
+string error

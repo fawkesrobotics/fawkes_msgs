@@ -30,12 +30,13 @@ add_message_files(
     SkillStatus.msg
 )
 
-# add_service_files(
-#   DIRECTORY srv
-#   FILES
-#     Service1.srv
-#     Service2.srv
-# )
+add_service_files(
+  DIRECTORY srv
+  FILES
+    WebviewNavRegistration.srv
+    WebviewProcessRequest.srv
+    WebviewUrlRegistration.srv
+)
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
