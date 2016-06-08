@@ -1,0 +1,2 @@
+NavGraphNode[] nodes
+NavGraphEdge[] edges
