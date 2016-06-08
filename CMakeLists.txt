@@ -16,27 +16,17 @@ find_package(catkin REQUIRED COMPONENTS
 ## Declare ROS messages, services and actions ##
 ################################################
 
-add_action_files(
-  DIRECTORY action
-  FILES
-    ExecSkill.action
-)
-    
+FILE(GLOB ACTION_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/action/" "${CMAKE_CURRENT_SOURCE_DIR}/action/*.action")
+add_action_files(FILES ${ACTION_FILES})
 
-add_message_files(
-  DIRECTORY msg
-  FILES
-    Position3D.msg
-    SkillStatus.msg
-)
+## Generate messages in the 'msg' folder
+FILE(GLOB MSG_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/msg/" "${CMAKE_CURRENT_SOURCE_DIR}/msg/*.msg")
+add_message_files(FILES ${MSG_FILES})
 
-add_service_files(
-  DIRECTORY srv
-  FILES
-    WebviewNavRegistration.srv
-    WebviewProcessRequest.srv
-    WebviewUrlRegistration.srv
-)
+## Generate services in the 'srv' folder
+FILE(GLOB SRV_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/srv/" "${CMAKE_CURRENT_SOURCE_DIR}/srv/*.srv")
+add_service_files(FILES ${SRV_FILES})
+
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
