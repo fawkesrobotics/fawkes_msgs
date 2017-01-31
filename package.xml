@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <package>
   <name>fawkes_msgs</name>
-  <version>0.2.0</version>
+  <version>0.2.1</version>
   <description>Messages used by Fawkes to interact with ROS.</description>
   <license>GPLv2</license>
 
-  <author>Till Hofmannr</author>
   <author>Tim Niemueller</author>
+  <author>Till Hofmann</author>
   <maintainer email="niemueller@kbsg.rwth-aachen.de">Tim Niemueller</maintainer>
 
   <url type="website">https://trac.fawkesrobotics.org/wiki/Plugins/ros</url>
