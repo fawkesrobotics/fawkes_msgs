@@ -1,0 +1,11 @@
+string  place
+float32 orientation
+---
+uint32 ERROR_NONE=0
+uint32 ERROR_MOTOR=1
+uint32 ERROR_OBSTRUCTION=2
+uint32 ERROR_UNKNOWN_PLACE=4
+uint32 ERROR_PATH_GEN_FAIL=8
+uint32 errcode
+string errmsg
+---
