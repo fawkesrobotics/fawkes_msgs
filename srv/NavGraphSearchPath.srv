@@ -1,0 +1,20 @@
+# Node from which to plan, leave empty to plan from robot's current position.
+string from_node
+
+# The goal can be specified in two ways:
+# - Setting to_node to the name of the node to reach, the pose is ignored
+# - If to_node is empty, the target will be to_pose (even if it is (0,0,0))
+#   The pose must be in the global reference frame, e.g., /map.
+string to_node
+geometry_msgs/Pose2D to_pose
+---
+# ok==true if a path could be found, false otherwise
+bool ok
+# An optional error message if ok==false
+string errmsg
+# The following holds the result of the path search if ok==true
+# Note that if from_node is empty an additional free node denoting the current
+# position will be first in the path. Further, if a target pose was specified
+# (and not a node name) then a free-target node will be last in the path.
+NavGraphNode[] path
+float32 cost

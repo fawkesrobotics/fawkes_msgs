@@ -1,0 +1,15 @@
+# This service allows to retrieve the pairwise cost between a set of nodes.
+# The array shall contain all nodes which have to be pairwise connected.
+string[] nodes
+---
+# ok==true if a path could be found, false otherwise
+bool ok
+# An optional error message if ok==false
+string errmsg
+# This contains the costs from each node to each other node of the request.
+# The cost from a node to itself is excluded, e.g., for the request
+# nodes [a, b, c] the resulting costs will be for a--b, a--c, b--c, b--a,
+# c--a, and c--b. Note that costs are not assumed to be symmetric between
+# nodes, i.e., a--c and c--a costs might be different, for example if there
+# are directed edges in the graph.
+NavGraphPathCost[] path_costs
