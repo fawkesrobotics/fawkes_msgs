@@ -1,0 +1,8 @@
+time timestamp
+string database
+string collection
+string target_frame
+bool original_timestamp
+---
+bool ok
+string error

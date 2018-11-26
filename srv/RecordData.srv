@@ -1,0 +1,6 @@
+duration range
+---
+bool ok
+string error
+time begin
+time end

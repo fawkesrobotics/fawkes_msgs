@@ -1,0 +1,7 @@
+time[] timestamps
+string database
+string collection
+---
+bool ok
+bool data_sufficient
+string error

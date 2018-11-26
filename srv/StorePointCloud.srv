@@ -1,0 +1,6 @@
+string database
+string collection
+sensor_msgs/PointCloud2 pointcloud
+---
+bool ok
+string error
