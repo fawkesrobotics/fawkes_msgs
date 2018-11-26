@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib
   actionlib_msgs
   geometry_msgs
+  sensor_msgs
 )
 
 ################################################
@@ -33,6 +34,7 @@ generate_messages(
   DEPENDENCIES
     actionlib_msgs
     geometry_msgs
+    sensor_msgs
 )
 
 ###################################
