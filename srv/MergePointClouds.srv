@@ -1,4 +1,5 @@
-time[] timestamps
+std_msgs/Time[] timestamps
+#time[] timestamps
 string database
 string collection
 ---
