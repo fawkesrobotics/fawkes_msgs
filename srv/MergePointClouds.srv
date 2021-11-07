@@ -1,4 +1,4 @@
-std_msgs/Time[] timestamps
+builtin_interfaces/Time[] timestamps
 #time[] timestamps
 string database
 string collection

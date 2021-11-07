@@ -1,6 +1,6 @@
-duration range
+builtin_interfaces/Duration range
 ---
 bool ok
 string error
-time begin
-time end
+builtin_interfaces/Time begin
+builtin_interfaces/Time end

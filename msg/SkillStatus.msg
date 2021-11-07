@@ -6,7 +6,7 @@ int32 S_FINAL    = 1
 int32 S_RUNNING  = 2
 int32 S_FAILED   = 3
 
-time   stamp
+builtin_interfaces/Time   stamp
 string skill_string
 string error
 int32  status

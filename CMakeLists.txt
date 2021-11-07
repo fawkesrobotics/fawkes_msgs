@@ -1,52 +1,45 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(fawkes_msgs)
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  message_generation
-  actionlib
-  actionlib_msgs
-  geometry_msgs
-  sensor_msgs
+# Default to C99
+if(NOT CMAKE_C_STANDARD)
+  set(CMAKE_C_STANDARD 99)
+endif()
+
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+find_package(ament_cmake REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(action_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+
+
+rosidl_generate_interfaces(fawkes_msgs
+  "action/ExecSkill.action"
+  "action/NavGraphGoto.action"
+  "msg/NavGraph.msg"
+  "msg/NavGraphEdge.msg"
+  "msg/NavGraphNode.msg"
+  "msg/NavGraphPathCost.msg"
+  "msg/NavGraphProperty.msg"
+  "msg/Position3D.msg"
+  "msg/SkillStatus.msg"
+  "srv/MergePointClouds.srv"
+  "srv/NavGraphGetPairwiseCosts.srv"
+  "srv/NavGraphSearchPath.srv"
+  "srv/RecordData.srv"
+  "srv/StorePointCloud.srv"
+  "srv/WebviewNavRegistration.srv"
+  "srv/WebviewProcessRequest.srv"
+  "srv/WebviewUrlRegistration.srv"
+  DEPENDENCIES builtin_interfaces action_msgs geometry_msgs std_msgs sensor_msgs
 )
 
-################################################
-## Declare ROS messages, services and actions ##
-################################################
 
-FILE(GLOB ACTION_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/action/" "${CMAKE_CURRENT_SOURCE_DIR}/action/*.action")
-add_action_files(FILES ${ACTION_FILES})
-
-## Generate messages in the 'msg' folder
-FILE(GLOB MSG_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/msg/" "${CMAKE_CURRENT_SOURCE_DIR}/msg/*.msg")
-add_message_files(FILES ${MSG_FILES})
-
-## Generate services in the 'srv' folder
-FILE(GLOB SRV_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/srv/" "${CMAKE_CURRENT_SOURCE_DIR}/srv/*.srv")
-add_service_files(FILES ${SRV_FILES})
-
-
-## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-    actionlib_msgs
-    geometry_msgs
-    sensor_msgs
-)
-
-###################################
-## catkin specific configuration ##
-###################################
-## The catkin_package macro generates cmake config files for your package
-## Declare things to be passed to dependent projects
-## INCLUDE_DIRS: uncomment this if you package contains header files
-## LIBRARIES: libraries you create in this project that dependent projects also need
-## CATKIN_DEPENDS: catkin_packages dependent projects also need
-## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
-  CATKIN_DEPENDS message_runtime actionlib actionlib_msgs geometry_msgs
-)
-
+ament_package()
